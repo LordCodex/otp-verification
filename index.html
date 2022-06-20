@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP VERIFICATION</title>
+</head>
+<body>
+    <div class="maincard">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-head-box">
+                <h2 class="cardhead">OTP VERIFICATION</h2>
+                <h5 class="cardhead-text">Enter the otp code we just send to your email <span class="text-brown"> boluolodo@gmail.com</span></h5>
+                </div>
+                <div class="code-input">
+                    <form action="" class="mt-5">
+                        <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(1)' maxlength=1 >
+                        <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(2)' maxlength=1 >
+                        <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(3)' maxlength=1 >
+                        <input class="otp" type="text" oninput='digitValidate(this)'onkeyup='tabChange(4)' maxlength=1 >
+                        <br>
+                        <button class='customBtn'>Verify</button>
+                    </form>
+                </div>
+                <div class="bottom-text">
+                    <h5>Don't receive the code?</h5>
+                    <br>
+                    <h5 class="resend">Resend</h5>
+                </div>
+    </div>
+</body>
+
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style-type: none;
+        text-decoration: none;
+    }
+body{
+    background-color: #f5f5f5;
+}
+.maincard{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 50%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    /* height: 50vh; */
+
+    margin-top: 8rem;
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.cardhead{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+    margin-top: 1rem;
+}
+.cardhead-text{
+    font-size: 13px;
+    font-weight: 500;
+    color: #000;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.text-brown{
+    color: brown;
+    font-weight: 700;
+}
+.code-input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+form input{
+  display:inline-block;
+  width:50px;
+  height:50px;
+  text-align:center;
+}
+.customBtn{
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 1rem;
+  padding:10px;
+  background-color: brown;
+  color: white;
+  width: 100%;
+}
+.bottom-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+.resend{
+    
+    font-weight: 800;
+    color: brown;
+    text-align: center;
+    margin-top: 1rem;
+}
+/* phone view */
+
+@media (max-width: 768px) {
+    .maincard{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 80%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    /* height: 50vh; */
+
+    margin-top: 8rem;
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.cardhead{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+    margin-top: 1rem;
+}
+.cardhead-text{
+    font-size: 13px;
+    font-weight: 500;
+    color: #000;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.text-brown{
+    color: brown;
+    font-weight: 700;
+}
+.code-input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+form input{
+  display:inline-block;
+  width:50px;
+  height:50px;
+  text-align:center;
+}
+.bottom-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+.resend{
+    
+    font-weight: 800;
+    color: brown;
+    text-align: center;
+    margin-top: 1rem;
+}
+    }
+
+</style>
+<script>
+    let digitValidate = function(ele){
+  console.log(ele.value);
+  ele.value = ele.value.replace(/[^0-9]/g,'');
+}
+
+let tabChange = function(val){
+    let ele = document.querySelectorAll('input');
+    if(ele[val-1].value != ''){
+      ele[val].focus()
+    }else if(ele[val-1].value == ''){
+      ele[val-2].focus()
+    }   
+ }
+
+
+</script>
+</html>
